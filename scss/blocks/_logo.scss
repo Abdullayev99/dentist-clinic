@@ -1,0 +1,40 @@
+.logo {
+  max-width: 103px;
+  display: block;
+
+  &:hover {
+   opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  .logo__img {
+    display: block;
+    width: 103px;
+    height: 56px;
+  }
+}
+
+// TABLET LOGO
+.tablet-logo {
+  max-width: 140px;
+  display: block;
+  display: none;
+
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.tablet-logo__img {
+  display: block;
+  width: 140px;
+  height: 21px;
+}

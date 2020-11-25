@@ -1,0 +1,29 @@
+.sitenav {
+  display: flex;
+  align-items: center;
+}
+
+.sitenav__list {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sitenav__item:not(:last-child) {
+  margin-right: 35px;
+}
+
+.sitenav__link {
+  text-decoration: none;
+  display: block;
+  color: $white-text;
+
+  &:hover {
+    color: $yellow;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

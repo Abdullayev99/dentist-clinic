@@ -1,0 +1,41 @@
+.site-header {
+  padding-top: 12px;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+}
+
+.site-header-bottom__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #0055B8;
+  border-radius: 5px;
+  padding: 20px 25px;
+}
+
+.site-header__socials {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.social__item:not(last-child) {
+  margin-right: 13px;
+}
+
+.social__link {
+  display: block;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
