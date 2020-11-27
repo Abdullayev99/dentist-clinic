@@ -1,0 +1,62 @@
+.site-header-bottom__rescue {
+  position: relative;
+  z-index: 1;
+}
+
+// SITE HEDER BOTTOM
+.site-header-bottom {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  padding: 20px 25px;
+  background-color: $blue;
+}
+
+
+// SITE HEADER BOTTOM SOCIAL
+.social{
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.social__item:not(:last-child) {
+  margin-right: 13px;
+}
+
+.social__link {
+  display: inline-block;
+  vertical-align: bottom;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+@include breakpoint-down (870) {
+
+  .site-header-bottom {
+    padding: 25px 0;
+    border-radius: 0;
+  }
+
+  .social {
+    width: 100%;
+    justify-content: center;
+    display: none;
+  }
+
+  .site-header--open .social {
+    display: flex;
+  }
+}

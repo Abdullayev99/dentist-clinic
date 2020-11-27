@@ -10,14 +10,22 @@
   flex-wrap: wrap;
 }
 
-.sitenav__item:not(:last-child) {
+.sitenav__item {
   margin-right: 35px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .sitenav__link {
   text-decoration: none;
-  display: block;
+  display: inline-block;
+  vertical-align: baseline;
   color: $white-text;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
 
   &:hover {
     color: $yellow;
@@ -25,5 +33,48 @@
 
   &:active {
     opacity: 0.6;
+  }
+}
+
+@include breakpoint-down (870) {
+
+  .sitenav {
+    width: 100%;
+    display: none;
+  }
+
+  .sitenav__list {
+    margin-top: 24px;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 69px;
+  }
+
+  .sitenav__item {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+
+
+  .sitenav__link {
+    width: 100%;
+    border-top: 1px solid $yellow;
+    border-bottom: 1px solid $yellow;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $yellow;
+      color: $blue;
+    }
+  }
+
+  .site-header--open .sitenav {
+    display: block;
   }
 }

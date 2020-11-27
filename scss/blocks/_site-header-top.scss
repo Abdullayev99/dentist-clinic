@@ -79,3 +79,10 @@
     line-height: 16px;
   }
 }
+
+// TABLET RESPONSIVE
+@include breakpoint-down (980) {
+  .site-header-top {
+    display: none;
+  }
+}

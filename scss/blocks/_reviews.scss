@@ -1,0 +1,134 @@
+.reviews {
+  padding-bottom: 65px;
+}
+
+.reviews-top {
+  position: relative;
+  z-index: 1;
+  max-width: 485px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+
+  &::after {
+    position: absolute;
+    z-index: 5;
+    top: -10%;
+    left: 25%;
+    content: "";
+    width: 275px;
+    height: 152px;
+    background-image: url("/img/heading-bg.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+
+  }
+}
+
+.reviews-top__heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: $black-text;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 42px;
+
+  &::before {
+    margin: auto;
+    margin-bottom: 16px;
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: $yellow;
+  }
+}
+
+.reviews-top__text {
+  margin-top: 0;
+  margin-bottom: 26px;
+  color: #4D4D4D;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 300;
+}
+
+.reviews__list {
+  @include reset-list;
+  display: flex;
+  justify-content: center;
+}
+
+.reviews__item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.review-members__name {
+  margin-bottom: 13px;
+  color: #000;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.review-members__quote {
+  margin: 0;
+  padding: 0;
+  color: #4D4D4D;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.reviews__link {
+  width: 265px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  padding: 20px 60px;
+  border: 2px solid #0055B8;
+  border-radius: 5px;
+  color: #4D4D4D;
+  font-size: 18px;
+  line-height: 21px;
+
+  &:hover {
+    background-color: #0055B8;
+    color: $white-text;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+.review-members::before {
+  content: "";
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 354px;
+  height: 240px;
+}
+
+.ivanova:nth-child(odd)::before {
+  background-image: url("/img/ivanov-bg.jpg");
+}
+
+.vasilisa:nth-child(even)::before {
+  background-image: url("/img/vasilisa-bg.jpg");
+}
+
+@include retina-bg {
+
+.ivanova:nth-child(odd)::before {
+  background-image: url("/img/ivanov-bg@2x.jpg");
+}
+
+.vasilisa:nth-child(even)::before {
+  background-image: url("/img/vasilisa-bg@2x.jpg");
+}
+}

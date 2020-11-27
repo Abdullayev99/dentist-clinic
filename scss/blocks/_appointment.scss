@@ -1,0 +1,244 @@
+.appointment {
+  padding-bottom: 70px;
+}
+
+.appointment__container {
+  display: flex;
+  align-items: center;
+}
+
+
+.appointment__list {
+  @include reset-list;
+  display: flex;
+}
+
+.appointment__item {
+  text-align: center;
+  padding: 39px 37px 56px 36px;
+  color: $black-text;
+  width: 300px;
+  border-radius: 5px;
+
+  &:first-child {
+  background-color: $yellow;
+  }
+
+  &:nth-child(2) {
+    background: #FFE040;
+  }
+}
+
+.appointments__heading {
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.appointments__heading::before {
+  display: block;
+  margin: auto;
+  margin-bottom: 19px;
+  content: "";
+  width: 87px;
+  height: 87px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.one-tooth::before {
+  background-image: url("/img/one-tooth.png");
+}
+
+.many-teeth::before {
+  background-image: url("/img/many-teeth.png");
+}
+
+@include retina-bg {
+  .one-tooth::before {
+    background-image: url("/img/one-tooth@2x.png");
+  }
+
+  .many-teeth::before {
+    background-image: url("/img/many-teeth@2x.png");
+  }
+
+}
+
+.appointments__text {
+  margin: 0;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+
+.appointment__form {
+  position: relative;
+  z-index: 10;
+  margin-top: -60px;
+  max-width: 540px;
+  background: #0055B8;
+  border-radius: 5px;
+  padding: 25px  33px 18px 33px;
+}
+
+.appointment__form-heading {
+  margin-top: 0;
+  margin-bottom: 29px;
+  color: $white-text;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.appointment__form-input {
+  width: 100%;
+  border: none;
+  border: 1px solid #fff;
+  padding: 21px 0;
+  padding-left: 14px;
+  background-color: $blue;
+  margin-bottom: 12px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  outline: none;
+  border-radius: 5px;
+
+  &:focus {
+    border: 3px solid $blue;
+    background-color: #fff;
+  }
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.appointment__form-button {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  padding: 17px 63px;
+  background-color: $yellow;
+  border-radius: 5px;
+  color: $black-text;
+  font-size: 18px;
+  line-height: 21px;
+  border: 1px solid transparent;
+  margin-bottom: 22px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.appointment__checkbox-text {
+  margin: 0;
+  max-width: 260px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: $white-text;
+}
+
+.appointment__checkbox {
+  display: none;
+}
+
+.checkbox__button {
+  display: block;
+  padding: 8px;
+  background-color: transparent;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 5px;
+  margin-left: auto;
+}
+
+.checkbox__label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.appointment__checkbox:checked ~ .checkbox__button {
+  background-image: url("/img/checkbox-sign.svg");
+}
+
+// RESPONSIVE
+@include breakpoint-down (1030) {
+  .appointment__form {
+    max-width: 400px;
+    padding: 15px;
+  }
+
+
+  .appointment__list {
+    margin-top: -15px;
+  }
+
+  .appointment__checkbox-text {
+    max-width: 250px;
+  }
+
+}
+
+@include breakpoint-down (950) {
+  .appointment__item {
+   width: 280px;
+  }
+
+  .appointment__form-button {
+    padding: 15px 40px;
+    font-weight: 400;
+  }
+
+  .appointment__container {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@include breakpoint-down (870) {
+
+  .appointment__list {
+    display: none;
+  }
+
+  .appointment__form {
+    flex-grow: 1;
+    margin-top: 5px;
+    max-width: 100%;
+    background: #0055B8;
+    border-radius: 5px;
+    padding: 25px  33px 18px 33px;
+  }
+
+  .appointment__form-button {
+    width: 100%;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+  }
+
+  .appointment__checkbox-text {
+    max-width: 260px;
+  }
+}
+
+@include breakpoint-down (375) {
+  .appointment__checkbox-text {
+    max-width: 200px;
+  }
+}

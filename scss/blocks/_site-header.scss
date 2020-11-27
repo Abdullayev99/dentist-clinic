@@ -1,5 +1,6 @@
 .site-header {
   padding-top: 12px;
+  padding-bottom: 52px;
   position: fixed;
   z-index: 50;
   width: 100%;
@@ -8,34 +9,46 @@
   background-color: #fff;
 }
 
-.site-header-bottom__wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  background: #0055B8;
-  border-radius: 5px;
-  padding: 20px 25px;
+
+// OPEN CLOSE TOGGLER
+.site-header__toggler {
+  display: none;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  width: 25px;
+  height: 18px;
+  background-image: url("/img/gamburger.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px 18px;
+  margin-right: 20px;
+  outline: none;
 }
 
-.site-header__socials {
-  @include reset-list;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.site-header--open .site-header__toggler {
+  background-image: url("/img/close-toggler-img.svg");
 }
 
-.social__item:not(last-child) {
-  margin-right: 13px;
-}
+// TABLET RESPONSIVE
+@include breakpoint-down (980) {
 
-.social__link {
-  display: block;
-
-  &:hover {
-    opacity: 0.8;
+  .container {
+    padding: 0;
   }
-  &:active {
-    opacity: 0.6;
+
+  .site-header {
+    padding: 0;
+  }
+}
+
+// .SMARTPHONE RESPONSIVE
+@include breakpoint-down (870) {
+
+  .site-header__toggler {
+    display: block;
   }
 }

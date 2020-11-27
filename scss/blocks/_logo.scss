@@ -12,7 +12,7 @@
 
   .logo__img {
     display: block;
-    width: 103px;
+    max-width: 103px;
     height: 56px;
   }
 }
@@ -34,7 +34,18 @@
 }
 
 .tablet-logo__img {
-  display: block;
-  width: 140px;
+  max-width: 140px;
   height: 21px;
+}
+
+@include breakpoint-down (980) {
+  .tablet-logo {
+    display: block;
+  }
+}
+
+@include breakpoint-down (870) {
+  .tablet-logo {
+    margin-left: 20px;
+  }
 }
